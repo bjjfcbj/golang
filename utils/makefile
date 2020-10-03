@@ -13,10 +13,10 @@ MAKE:=make all
 SRC:=$(wildcard ./*.go)
 WORK:=$(patsubst ./%.go, ./go_%,$(SRC))
 
+all:$(WORK)
+
 run:
 	$(MAKE)&&$(g) run $(FLAG).go
-
-all:$(WORK)
 
 go_%:%.go
 	$(g) build -o $@ $<
